@@ -12,7 +12,7 @@ const Layout = () => {
                 <Routess />
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

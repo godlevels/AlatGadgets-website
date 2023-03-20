@@ -17,7 +17,7 @@ const Routess = () => {
             <Route path='home' element={<Home />}/>
             <Route path='shop' element={<Shop />}/>
             <Route path='cart' element={<Cart />}/>
-            <Route path='productdetail' element={<ProductDetail />}/>
+            <Route path='shop/:id' element={<ProductDetail />}/>
             <Route path='checkout' element={<Checkout />}/>
             <Route path='login' element={<Login />}/>
             <Route path='signup' element={<Signup />}/>
