@@ -13,7 +13,7 @@ const CommonSection = ({title}) => {
             <div className='absolute bg-cover h-[5px] flex items-center'>
                 <img className='bg-white bg-center bg-no-repeat' src={HeroImgTwo} alt="" />
             </div>
-            <Container className='text-center relative top-[10rem]'>
+            <Container className='text-center relative top-[2rem] md:top-[10rem]'>
                 <h1>{title}</h1>
             </Container>
         </section>    

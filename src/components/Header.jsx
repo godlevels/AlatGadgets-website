@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import user from '../assets/images/user.png'
 import { useSelector } from 'react-redux'
@@ -10,11 +10,16 @@ const Header = () => {
 
     const totalQuantity = useSelector(state=> state.cart.totalQuantity)
     const [header, setHeader] = useState(false)
+    const navigate = useNavigate()
     useEffect(()=> {
         window.addEventListener('scroll', ()=> {
             window.scrollY > 80 ? setHeader(true) : setHeader(false)
         })
     })
+
+    const navigateToCart =()=> {
+        navigate('/cart')
+    }
 
     return (
 
@@ -47,7 +52,7 @@ const Header = () => {
                             <h1 className='absolute top-[87%] right-[60.5%] md:top-[87%] md:right-[55.5%] lg:top-[37%] lg:right-[19%] xl:top-[35%] xl:right-[12rem] bg-[#0a1d37] text-[#fff] px-1 text-[8px] font-medium z-10 rounded-full flex items-center justify-center w-3 h-3'>2</h1>
                         </span>
 
-                        <span className='cursor-pointer'>
+                        <span className='cursor-pointer' onClick={navigateToCart}>
                             <i class='ri-shopping-bag-line text-[20px] font-bold relative'></i>
                             <h1 className='absolute top-[87%] right-[49%] md:bottom-[10%] md:right-[49%] lg:top-[40%] lg:right-[14.5%] xl:top-[36%] xl:right-[9rem] bg-[#0a1d37] text-[#fff] px-1 text-[8px] font-medium z-10 rounded-full flex items-center justify-center w-3 h-3'>{totalQuantity}</h1>
                         </span>

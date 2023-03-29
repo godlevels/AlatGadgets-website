@@ -32,10 +32,10 @@ const Shop = () => {
         <Helmet title='Shop'>
           <CommonSection title='Products'/>
 
-          <div className='bg-white mt-[23rem]'>
+          <div className='bg-white mt-[6rem] md:mt-[23rem]'>
             <Container className='pb-3'>
               <Row>
-                <Col lg='3' md='3'>
+                <Col lg='3' md='3' className='mb-4'>
                   <div>
                     <select onClick={handleFilter} className='py-2 px-3 border-[1.5px] border-[#0a1d37] outline-none cursor-pointer rounded-md'>
                       <option >Filter by Category</option>
@@ -44,7 +44,7 @@ const Shop = () => {
                     </select>  
                   </div>  
                 </Col>  
-                <Col lg='3' md='4'>
+                {/* <Col lg='3' md='4'>
                   <div>
                     <select className='py-2 px-5'>
                       <option>Sort by</option>
@@ -52,7 +52,7 @@ const Shop = () => {
                       <option value="descending">Descending</option>
                     </select>  
                   </div>
-                </Col>  
+                </Col>   */}
                 <Col lg='6' md='6'>
                   <div className="search__box w-full flex items-center justify-between border border-[#0a1d37] rounded pl-2 pr-3 cursor-pointer">
                     <input type="text" className='w-full px-3 py-2 border-none outline-none' placeholder='Search Products...' onChange={handleSearch}/>
