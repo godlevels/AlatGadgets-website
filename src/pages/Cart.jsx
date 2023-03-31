@@ -5,10 +5,12 @@ import { Container, Row, Col } from 'reactstrap'
 import { motion } from 'framer-motion'
 import { cartActions } from '../Redux/Slices/cartSlice'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
 
   const cartItems = useSelector(state=> state.cart.cartItems)
+  const totalAmount = useSelector (state => state.cart.totalAmount)
 
     return ( 
         <Helmet title='Cart'>
@@ -19,7 +21,7 @@ const Cart = () => {
                 <Col lg='9'>
                   {
                     cartItems.length===0 ? (
-                    <h2 className='text-center relative md:left-36'>You no add any product</h2>
+                    <h2 className='text-center relative'>You no add any product</h2>
                     ) : (
                       <table className='table bordered'>
                     <thead>
@@ -43,7 +45,18 @@ const Cart = () => {
                     )
                   }
                 </Col>  
-                <Col lg='3'></Col>  
+                <Col lg='3'>
+                  <div>
+                    <h5>Subtotal</h5>
+                    <span className='font-bold text-xl'>${totalAmount}</span>
+                  </div>  
+                  <p>Get the total in the checkout</p>
+
+                  <div className='mt-9 flex gap-x-6'>
+                    <button className="items-center"><Link to='/shop' className='bg-[#6b70de] p-2 text-white rounded-sm'>Continue Shopping</Link></button>
+                    <button className="items-center"><Link to='/checkout' className='bg-[#6b70de] p-2 text-white rounded-sm'>Checkout</Link></button>
+                  </div>
+                </Col>  
               </Row>  
             </Container>  
           </section>  
@@ -52,7 +65,7 @@ const Cart = () => {
 }
 
 const Tr = ({item})=> {
-  const dispatch = useDispatch
+  const dispatch = useDispatch()
 
   const deleteProduct  =()=>{
     dispatch(cartActions.deleteItem(item.id))
