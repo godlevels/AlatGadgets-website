@@ -4,9 +4,9 @@ import Shop from '../pages/Shop'
 import Cart from '../pages/Cart'
 import ProductDetail from '../pages/ProductDetail'
 import Checkout from '../pages/Checkout'
-import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import { Routes, Route, Navigate } from 'react-router-dom'
+import Login from '../pages/Login'
 
  
 

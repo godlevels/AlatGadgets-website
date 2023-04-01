@@ -19,7 +19,7 @@ const Shop = () => {
       const filteredProducts = products.filter(item=> item.category==='gadgets')
       setProductsData(filteredProducts)
     }
-  }
+  } 
 
   const handleSearch = e => {
     const searchProduct = e.target.value
